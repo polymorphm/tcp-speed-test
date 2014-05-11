@@ -7,4 +7,4 @@ tcp-speed-test
 Status
 ------
 
-Developer version (git master branch).
+Beta release tcp-speed-test-0.1.1 .
