@@ -25,6 +25,7 @@ assert str is not bytes
 import asyncio
 import socket
 import os
+import random
 import datetime
 
 READER_LIMIT=10000000
@@ -47,7 +48,9 @@ def blocking_create_rnd_generator():
     
     def rnd_generator():
         while True:
-            yield from rnd_list
+            rnd_i = random.randrange(len(rnd_list))
+            
+            yield rnd_list[rnd_i]
     
     return rnd_generator()
 
