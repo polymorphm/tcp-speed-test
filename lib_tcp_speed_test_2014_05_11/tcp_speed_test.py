@@ -144,8 +144,9 @@ def connect_cmd(loop, hostname, port):
             
             if time_delta >= datetime.timedelta(seconds=1.0):
                 speed = buf_summ / time_delta.total_seconds()
+                mbit_speed = round(speed * 8 / 1000 / 1000)
                 
-                try_print('download speed: {}'.format(speed))
+                try_print('download speed: {} Mbit/s ({} b/s)'.format(mbit_speed, speed))
                 
                 last_time = datetime.datetime.now()
                 buf_summ = 0
